@@ -1,0 +1,46 @@
+.title{
+  margin-top: 5%;
+  font-size: 25px;
+  color: darkblue;
+}
+table{
+  outline: 2px solid darkgrey !important;
+}
+.div-table{
+  outline: 1px solid gray;
+}
+tr{
+  height: 100px !important;
+  vertical-align: middle;
+  padding-top: 5%;
+  font-size: 25px;
+  color: darkblue;
+}
+td{
+  padding-top: 30px;
+  }
+
+.fa-plus-circle{
+  color: deeppink;
+}
+
+.row-title{
+  margin-right: 50%;
+}
+span{
+  min-width: 50px;
+  padding: 2%;
+}
+.incr-decr{
+  width: 100%;
+}
+.count{
+  margin-right: 8%;
+  margin-left: 8%;
+}
+.disabled-button{
+  cursor: not-allowed;
+}
+.fa-plus-circle:hover .fa-minus-circle:hover{
+  cursor: hand !important;
+}

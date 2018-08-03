@@ -1,0 +1,58 @@
+<div class="container">
+
+  <p class="title">
+    <i class="fa fa-users"></i>
+    Choose number of <b>people</b>
+  </p>
+  <table class="table">
+    <tr>
+      <td width="70%"><i class="fa fa-hotel"></i>
+        <span>ROOMS</span>
+      </td>
+      <td width="30%" class="incr-decr">
+        <a (click)="decrementRooms()" [class.disabled-button]="no_of_rooms==1">
+          <i class="fa fa-minus-circle "></i>
+        </a>
+        <span class="count">{{no_of_rooms}}</span>
+        <a (click)="incrementRooms()" [class.disabled-button]="no_of_rooms>4">
+          <i class="fa fa-plus-circle "></i>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-user"></i>
+        <span>ADULTS</span>
+      </td>
+      <td class="incr-decr">
+        <a (click)="decrementAdults()" [class.disabled-button]="this.no_of_adults <= this.no_of_rooms">
+          <i  class="fa fa-minus-circle "></i>
+        </a>
+        <span class="count">{{no_of_adults}}</span>
+        <a (click)="incrementAdults()">
+          <i
+            [class.disabled-button]="(this.no_of_adults + this.no_of_children) >= (this.no_of_rooms*4)"
+            class="fa fa-plus-circle ">
+
+          </i>
+        </a>
+
+      </td>
+    </tr>
+    <tr>
+      <td><i class="fa fa-child"></i>
+        <span>CHILDREN</span>
+      </td>
+      <td class="incr-decr">
+        <a  (click)="decrementChildren()" [class.disabled-button]="no_of_children<=0">
+          <i class="fa fa-minus-circle ">
+          </i>
+        </a>
+        <span class="count">{{no_of_children}}</span>
+        <a (click)="incrementChildren()" [class.disabled-button]="(this.no_of_adults + this.no_of_children) >= (this.no_of_rooms*4)">
+          <i  class="fa fa-plus-circle ">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
