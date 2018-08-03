@@ -10,11 +10,11 @@
         <span>ROOMS</span>
       </td>
       <td width="30%" class="incr-decr">
-        <a (click)="decrementRooms()" [class.disabled-button]="no_of_rooms==1">
+        <a (click)="decrementRooms()" [class.disabled-button]="numberOfRooms==1">
           <i class="fa fa-minus-circle "></i>
         </a>
-        <span class="count">{{no_of_rooms}}</span>
-        <a (click)="incrementRooms()" [class.disabled-button]="no_of_rooms>4">
+        <span class="count">{{numberOfRooms}}</span>
+        <a (click)="incrementRooms()" [class.disabled-button]="numberOfRooms>4">
           <i class="fa fa-plus-circle "></i>
         </a>
       </td>
@@ -24,13 +24,13 @@
         <span>ADULTS</span>
       </td>
       <td class="incr-decr">
-        <a (click)="decrementAdults()" [class.disabled-button]="this.no_of_adults <= this.no_of_rooms">
-          <i  class="fa fa-minus-circle "></i>
+        <a (click)="decrementAdults()" [class.disabled-button]="this.numberOfAdults <= this.numberOfRooms">
+          <i class="fa fa-minus-circle "></i>
         </a>
-        <span class="count">{{no_of_adults}}</span>
+        <span class="count">{{numberOfAdults}}</span>
         <a (click)="incrementAdults()">
           <i
-            [class.disabled-button]="(this.no_of_adults + this.no_of_children) >= (this.no_of_rooms*4)"
+            [class.disabled-button]="(this.numberOfAdults + this.numberOfChildren) >= (this.numberOfRooms*4)"
             class="fa fa-plus-circle ">
 
           </i>
@@ -43,13 +43,14 @@
         <span>CHILDREN</span>
       </td>
       <td class="incr-decr">
-        <a  (click)="decrementChildren()" [class.disabled-button]="no_of_children<=0">
+        <a (click)="decrementChildren()" [class.disabled-button]="numberOfChildren<=0">
           <i class="fa fa-minus-circle ">
           </i>
         </a>
-        <span class="count">{{no_of_children}}</span>
-        <a (click)="incrementChildren()" [class.disabled-button]="(this.no_of_adults + this.no_of_children) >= (this.no_of_rooms*4)">
-          <i  class="fa fa-plus-circle ">
+        <span class="count">{{numberOfChildren}}</span>
+        <a (click)="incrementChildren()"
+           [class.disabled-button]="(this.numberOfAdults + this.numberOfChildren) >= (this.numberOfRooms*4)">
+          <i class="fa fa-plus-circle ">
           </i>
         </a>
       </td>

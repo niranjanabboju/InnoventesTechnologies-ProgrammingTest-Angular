@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,62 +6,61 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  no_of_rooms = 1;
-  no_of_adults = 1;
-  no_of_children = 0;
+  numberOfRooms = 1;
+  numberOfAdults = 1;
+  numberOfChildren = 0;
 
   decrementRooms() {
-    if(this.no_of_rooms <= 1)
+    if (this.numberOfRooms <= 1) {
       return;
-    else {
-    this.no_of_rooms--;
-    while((this.no_of_adults + this.no_of_children) > (this.no_of_rooms*4)){
-      if(this.no_of_children>0){
-        this.no_of_children --;
-      }else if(this.no_of_children <=0){
-        this.no_of_adults --;
+    } else {
+      this.numberOfRooms--;
+      while ((this.numberOfAdults + this.numberOfChildren) > (this.numberOfRooms * 4)) {
+        if (this.numberOfChildren > 0) {
+          this.numberOfChildren--;
+        } else if (this.numberOfChildren <= 0) {
+          this.numberOfAdults--;
+        }
       }
-    }
     }
 
   }
+
   decrementAdults() {
-    if(this.no_of_adults <= 1)
+    if (this.numberOfAdults <= 1) {
       return;
-    else if(this.no_of_adults > this.no_of_rooms) {
-    this.no_of_adults--;
+    } else if (this.numberOfAdults > this.numberOfRooms) {
+      this.numberOfAdults--;
     }
   }
+
   decrementChildren() {
-    if(this.no_of_children <= 0 )
+    if (this.numberOfChildren <= 0) {
       return;
-    else {
-      this.no_of_children--;
+    } else {
+      this.numberOfChildren--;
     }
   }
 
   incrementRooms() {
-    if( this.no_of_rooms >= 5)
-    {
+    if (this.numberOfRooms >= 5) {
       return;
-    }
-    else {
-      this.no_of_rooms++;
-      if(this.no_of_adults < this.no_of_rooms)
-      this.no_of_adults++;
-
+    } else {
+      this.numberOfRooms++;
+      if (this.numberOfAdults < this.numberOfRooms)
+        this.numberOfAdults++;
     }
   }
+
   incrementAdults() {
-
-     if(this.no_of_adults + this.no_of_children < (this.no_of_rooms*4)){
-      this.no_of_adults++;
+    if (this.numberOfAdults + this.numberOfChildren < (this.numberOfRooms * 4)) {
+      this.numberOfAdults++;
     }
   }
-  incrementChildren() {
 
-    if((this.no_of_rooms * 4) > (this.no_of_adults + this.no_of_children)){
-      this.no_of_children++;
+  incrementChildren() {
+    if ((this.numberOfRooms * 4) > (this.numberOfAdults + this.numberOfChildren)) {
+      this.numberOfChildren++;
     }
   }
 }
